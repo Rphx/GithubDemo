@@ -1,0 +1,81 @@
+---
+title: "Github Demo"
+author: "Bill Wood"
+date: "Saturday, May 16, 2015"
+output: html_document
+---
+
+# Introduction
+
+**There are two parts to this demo.**
+
+1. Installing packages directly from GitHub
+2. Saving code from RStudio with GitHub
+
+
+## Installing Packages from GitHub
+
+There are a couple of tools you can use to install packages directly from GitHub.
+
+1. devtools (this requires installing Rtools)
+2. pacman
+
+### Installing devtools
+
+```{r eval=FALSE}
+install.packages("devtools")
+library("devtools")
+```
+
+You'll be told that you need to install Rtools from the following URL
+http://cran.r-project.org/bin/windows/Rtools/
+
+Then run find_rtools() to make sure R knows where to find them
+
+```{r eval=FALSE}
+find_rtools()
+```
+```{r echo=FALSE}
+devtools::find_rtools()
+```
+
+### Installing a GitHub package from devtools
+
+```{r eval=FALSE}
+install_github("hadley/tidyr")
+```
+```{r echo=FALSE}
+devtools::install_github("hadley/tidyr")
+```
+
+### Installing pacman
+
+```{r eval=FALSE}
+install.packages("pacman")
+library("pacman")
+```
+
+### Installing a GitHub package from pacman
+
+```{r eval=FALSE}
+p_load_gh("trinker/wakefield")
+```
+```{r echo=FALSE}
+pacman::p_load_gh("trinker/wakefield")
+```
+
+
+## Using GitHub from within RStudio
+
+http://www.molecularecologist.com/2013/11/using-github-with-r-and-rstudio/
+
+1. Setup a GitHub account.
+2. Download and install Rstudio.
+3. Download and install the platform-specific version of Git (not GitHub), default options   work well.
+4. Configure Git with global commands. I have found this step necessary both times I ran through this process. 
+
+Open up the bash version of Git and type the following:         
+  git config –global user.name “your GitHub account name”                                                     
+  git config –global user.email “GitHubEmail@something.com”
+
+5. Open Rstudio and set the path to Git executable. Go to Tools > Options > Git/SVN 
