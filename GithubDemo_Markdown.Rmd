@@ -79,3 +79,5 @@ Open up the bash version of Git and type the following:
   git config –global user.email “GitHubEmail@something.com”
 
 5. Open Rstudio and set the path to Git executable. Go to Tools > Options > Git/SVN 
+
+https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN
