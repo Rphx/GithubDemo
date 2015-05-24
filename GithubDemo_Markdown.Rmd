@@ -89,3 +89,4 @@ Open up the bash version of Git and type the following:
 https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN
 
 We are checking the updating of files.
+I've got a clone and I'm not afraid to use it.
