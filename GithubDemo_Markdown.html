@@ -95,10 +95,10 @@ library(&quot;devtools&quot;)</code></pre>
 <pre class="r"><code>install_github(&quot;hadley/tidyr&quot;)</code></pre>
 <pre><code>## Downloading github repo hadley/tidyr@master
 ## Installing tidyr
-## &quot;C:/PROGRA~1/R/R-32~1.0/bin/x64/R&quot; --no-site-file --no-environ --no-save  \
-##   --no-restore CMD INSTALL  \
-##   &quot;C:/Users/Bill/AppData/Local/Temp/RtmpQtpgsV/devtools1e9079aa1bc4/hadley-tidyr-0dc87b2&quot;  \
-##   --library=&quot;C:/Users/Bill/Documents/R/win-library/3.2&quot; --install-tests</code></pre>
+## &quot;C:/PROGRA~1/R/R-32~1.0/bin/i386/R&quot; --no-site-file --no-environ  \
+##   --no-save --no-restore CMD INSTALL  \
+##   &quot;C:/Users/Bill/AppData/Local/Temp/RtmpwPI4uj/devtoolsdac75274e46/hadley-tidyr-0dc87b2&quot;  \
+##   --library=&quot;C:/R/Libraries&quot; --install-tests</code></pre>
 </div>
 <div id="installing-pacman" class="section level3">
 <h3>Installing pacman</h3>
@@ -116,20 +116,54 @@ library(&quot;pacman&quot;)</code></pre>
 <h3>Setting up GitHub with RStudio</h3>
 <p><a href="http://www.molecularecologist.com/2013/11/using-github-with-r-and-rstudio/" class="uri">http://www.molecularecologist.com/2013/11/using-github-with-r-and-rstudio/</a></p>
 <ol style="list-style-type: decimal">
-<li>Setup a GitHub account.</li>
+<li>Setup a GitHub account. (A free account allows you to publish public repositories)</li>
 <li>Download and install Rstudio.</li>
-<li>Download and install the platform-specific version of Git (not GitHub), default options work well.</li>
-<li>Configure Git with global commands. I have found this step necessary both times I ran through this process.</li>
-</ol>
-<p>Open up the bash version of Git and type the following:<br /> git config –global user.name “your GitHub account name”<br /> git config –global user.email “<a href="mailto:GitHubEmail@something.com">GitHubEmail@something.com</a>”</p>
-<ol start="5" style="list-style-type: decimal">
-<li>Open Rstudio and set the path to Git executable. Go to Tools &gt; Options &gt; Git/SVN</li>
+<li>Download and install the platform-specific Git client</li>
+<li>Configure Git with global commands as follows in Git Bash<br /> git config –global user.name “your GitHub account name”<br /> git config –global user.email “<a href="mailto:GitHubEmail@something.com">GitHubEmail@something.com</a>”</li>
+<li>Open Rstudio and set the path to Git executable.<br /> Go to Tools &gt; Global Options &gt; Git/SVN and add the path to the git executable</li>
 </ol>
 </div>
-<div id="configuring-an-rstudio-project-with-github" class="section level3">
-<h3>Configuring an RStudio project with GitHub</h3>
+<div id="configuring-a-project-with-github" class="section level3">
+<h3>Configuring a project with GitHub</h3>
+<p>You can either add git to an existing project or create a project from an existing git repository</p>
+<p>We are going to walk through creating a clone from the Rphx Github repository and creating a project in RStudio. There are two ways to do it.</p>
+<div id="create-a-project-from-a-local-repository" class="section level4">
+<h4>1. Create a project from a local repository</h4>
+<p>In this method, first you clone the repository to a local directory, then create the project</p>
+<ol style="list-style-type: decimal">
+<li>Using the Git Gui, choose Clone Existing Repository<br /></li>
+</ol>
+<ul>
+<li><strong>Source Location</strong>: <a href="https://github.com/Rphx/GithubDemo.git" class="uri">https://github.com/Rphx/GithubDemo.git</a><br /></li>
+<li><strong>Target Directory</strong>: wherever you want to create the project.<br /></li>
+<li>The Target directory must not exist yet. This will pull the files from the remote repository into the new directory</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Using RStudio, create a new project from an existing Git repository<br /></li>
+</ol>
+<ul>
+<li>In the upper right corner, select New Project…</li>
+<li>From an Existing Directory…</li>
+<li>When you create a project from a Git repository it will automatically have Git enabled</li>
+</ul>
+</div>
+<div id="create-a-project-directory-from-a-remote-repository" class="section level4">
+<h4>2. Create a project directory from a remote repository</h4>
+<ol style="list-style-type: decimal">
+<li>Using RStudio, select New Project… from the upper right corner</li>
+<li>Select Version Control</li>
+<li>Select Git</li>
+<li>Enter the required information:<br /> <strong>Repository URL</strong>: <a href="https://github.com/Rphx/GithubDemo.git" class="uri">https://github.com/Rphx/GithubDemo.git</a><br /> <strong>Project directory name</strong>:<br /> <strong>Create project as a subdirectory of</strong>:<br /> Select <strong>Open in new window</strong> if you want to open another instance of RStudio with the new project</li>
+</ol>
+</div>
+<div id="working-with-git" class="section level4">
+<h4>Working with Git</h4>
+<p>Some Basic Git terminology: * <strong>Clone</strong> - To copy from a parent repository to a new child repository<br />* <strong>Add</strong> - Tell Git to start monitoring the file<br />* <strong>Commit</strong> - Tell Git to update the local repository with the changes<br />* <strong>Push</strong> - Upload changes to the remote repository<br />* <strong>Pull</strong> - To download the latest files from the remote repository</p>
+</div>
+<div id="working-with-git-in-rstudio" class="section level4">
+<h4>Working with Git in RStudio</h4>
 <p><a href="https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN" class="uri">https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN</a></p>
-<p>We are checking the updating of files. I’ve got a clone and I’m not afraid to use it.</p>
+</div>
 </div>
 </div>
 </div>

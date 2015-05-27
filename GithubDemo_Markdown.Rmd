@@ -71,26 +71,58 @@ pacman::p_load_gh("trinker/wakefield")
 
 http://www.molecularecologist.com/2013/11/using-github-with-r-and-rstudio/
 
-1. Setup a GitHub account.
+1. Setup a GitHub account. (A free account allows you to publish public repositories)
 2. Download and install Rstudio.
-3. Download and install the platform-specific version of Git (not GitHub), default options   work well.
-4. Configure Git with global commands. I have found this step necessary both times I ran through this process. 
-
-Open up the bash version of Git and type the following:         
+3. Download and install the platform-specific Git client
+4. Configure Git with global commands as follows in Git Bash     
   git config –global user.name “your GitHub account name”                                                     
   git config –global user.email “GitHubEmail@something.com”
+5. Open Rstudio and set the path to Git executable.    
+  Go to Tools > Global Options > Git/SVN and add the path to the git executable
 
-5. Open Rstudio and set the path to Git executable. Go to Tools > Options > Git/SVN 
+### Configuring a project with GitHub
 
-### Configuring an RStudio project with GitHub
+You can either add git to an existing project or create a project from an existing git repository
+
+We are going to walk through creating a clone from the Rphx Github repository and creating a project in RStudio. There are two ways to do it.
+
+#### 1. Create a project from a local repository
+
+In this method, first you clone the repository to a local directory, then create the project
+
+1. Using the Git Gui, choose Clone Existing Repository  
+  + **Source Location**: https://github.com/Rphx/GithubDemo.git  
+  + **Target Directory**: wherever you want to create the project.  
+  + The Target directory must not exist yet. This will pull the files from the remote repository into the new directory
+2. Using RStudio, create a new project from an existing Git repository    
+  + In the upper right corner, select New Project...
+  + From an Existing Directory...
+  + When you create a project from a Git repository it will automatically have Git enabled
+
+#### 2. Create a project directory from a remote repository
+
+1. Using RStudio, select New Project... from the upper right corner
+2. Select Version Control
+3. Select Git
+4. Enter the required information:    
+  **Repository URL**: https://github.com/Rphx/GithubDemo.git    
+  **Project directory name**:    
+  **Create project as a subdirectory of**:    
+  Select **Open in new window** if you want to open another instance of RStudio with the new project
+
+#### Working with Git  
+
+Some Basic Git terminology:
+* **Clone** - To copy from a parent repository to a new child repository    
+* **Add** - Tell Git to start monitoring the file    
+* **Commit** - Tell Git to update the local repository with the changes    
+* **Push** - Upload changes to the remote repository    
+* **Pull** - To download the latest files from the remote repository
+
+#### Working with Git in RStudio
+
 
 
 
 https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN
-
-We are checking the updating of files.
-
-I've got a clone and I'm not afraid to use it.
-
-nnnnn
 
